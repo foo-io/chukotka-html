@@ -1,0 +1,9 @@
+:root {
+	--font-family: 'Avenir Next Cyr', Arial, Helvetica, sans-serif;
+
+	--blue: #e4f1ff;
+	--light-blue: #0c8eeb;
+	--navy-blue: #005d9f;
+
+	--padding-horizontal: 16px;
+}

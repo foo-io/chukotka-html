@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Подписки</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="./assets/js/popper.min.dev.js"></script>
+    <script src="./assets/js/tippy-bundle.umd.js"></script>
+    <script src="./assets/js/vue-multiselect.min.js"></script>
+    <script src="./assets/js/vue-datepicker.iife.js"></script>
+    <script src="./assets/js/micromodal.min.js"></script>
+    <script src="./assets/js/app.js" defer></script>
+  </head>
+  <body id="app">
+    <!-- header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-geolocation">
+            <img src="./assets/icons/geolocation.svg" alt="Геолокация" />
+            <span>Чукотский автономный округ</span>
+          </div>
+          <div class="header-actions">
+            <div class="header-actions-contact-phone">
+              <span>Телефон:</span>
+              <a href="tel:+" class="header-phone-link">+(42722) 2-22-29</a>
+            </div>
+            <a href="#" class="header-bvi-link">
+              <span>Версия для слабовидящих</span>
+            </a>
+          </div>
+        </div>
+        <hr class="decider-header" />
+        <div class="header-main">
+          <a href="#" class="logo-link">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Логотип"
+              class="logo-image" />
+          </a>
+          <div class="header-panel">
+            <div
+              class="header-personal-container"
+              :class="{'header-personal-active': isVisiblePersonalButton}">
+              <button
+                @click="isVisiblePersonalButton = !isVisiblePersonalButton"
+                class="header-personal header-personal-icon">
+                <span>Иванов Иван</span>
+              </button>
+              <div class="header-personal-menu" v-if="isVisiblePersonalButton">
+                <hr class="decider-header-menu" />
+
+                <a
+                  href="#"
+                  class="header-personal-logout header-personal-logout-icon">
+                  <span>Выйти</span>
+                </a>
+              </div>
+            </div>
+            <div class="header-burger">
+              <button @click="showMenu" class="header-burger-button">
+                <img src="./assets/icons/burger.svg" alt="Меню" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu" v-if="isVisibleMobileMenu">
+        <div class="mobile-header">
+          <a href="#" class="logo-link">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Логотип"
+              class="logo-image" />
+          </a>
+          <button class="mobile-burger-close" @click="showMenu">
+            <img src="./assets/icons/close.svg" alt="Закрыть" />
+          </button>
+        </div>
+        <div class="mobile-menu-content">
+          <nav>
+            <ul class="menu-list">
+              <li class="menu-list-item">
+                <a href="#" class="menu-list-item-link"
+                  >Добавить Лицевой счет</a
+                >
+              </li>
+              <li class="menu-list-item">
+                <a href="#" class="menu-list-item-link">Начисления и оплаты</a>
+              </li>
+              <li
+                class="menu-list-item selected"
+                :class="{'menu-active': isVisibleNavigation === 1}">
+                <a href="#" class="menu-list-item-link">
+                  Сервисы
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(1)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 1">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Оплата услуг</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Подписка на электронную квитанцию</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Передача показаний ПУ</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Обратная связь</a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="menu-list-item"
+                :class="{'menu-active': isVisibleNavigation === 2}">
+                <a href="#" class="menu-list-item-link"
+                  >Скачать документы
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(2)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 2">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Квитанции</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Договоры</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Извещения</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-list-item">
+                <a href="#" class="menu-list-item-link">
+                  Уведомления
+                  <span class="badge">20</span>
+                </a>
+              </li>
+              <li
+                class="menu-list-item"
+                :class="{'menu-active': isVisibleNavigation === 3}">
+                <a href="#" class="menu-list-item-link"
+                  >Настройки
+
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(3)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 3">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Смена пароля</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Удаление лицевого счета</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Удаление учетной записи</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Профиль</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <hr class="decider-header-mobile" />
+          <div class="mobile-header-personal">
+            <a href="#" class="header-personal-logout header-personal-icon">
+              <span>Иванов Иван</span>
+            </a>
+            <hr class="decider-header-menu" />
+            <a
+              href="#"
+              class="header-personal-logout header-personal-logout-icon">
+              <span>Выйти</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ./header -->
+
+    <!-- main -->
+    <main class="container">
+      <div class="page">
+        <aside>
+          <nav class="aside-navigation">
+            <ul class="menu-list">
+              <li class="menu-list-item">
+                <a href="#" class="menu-list-item-link"
+                  >Добавить Лицевой счет</a
+                >
+              </li>
+              <li class="menu-list-item selected">
+                <a href="#" class="menu-list-item-link">Начисления и оплаты</a>
+              </li>
+              <li
+                class="menu-list-item"
+                :class="{'menu-active': isVisibleNavigation === 1}">
+                <a href="#" class="menu-list-item-link">
+                  Сервисы
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(1)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 1">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Оплата услуг</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Подписка на электронную квитанцию</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Передача показаний ПУ</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Обратная связь</a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="menu-list-item"
+                :class="{'menu-active': isVisibleNavigation === 2}">
+                <a href="#" class="menu-list-item-link"
+                  >Скачать документы
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(2)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 2">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Квитанции</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Договоры</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Извещения</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-list-item">
+                <a href="#" class="menu-list-item-link">
+                  Уведомления
+                  <span class="badge">20</span>
+                </a>
+              </li>
+              <li
+                class="menu-list-item"
+                :class="{'menu-active': isVisibleNavigation === 3}">
+                <a href="#" class="menu-list-item-link"
+                  >Настройки
+
+                  <button
+                    class="menu-list-item-arrow"
+                    @click.prevent="openMenu(3)">
+                    <img src="./assets/icons/arrow.svg" alt="Стрелка" />
+                  </button>
+                </a>
+                <ul class="menu-sublist" v-if="isVisibleNavigation === 3">
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Смена пароля</a>
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Удаление лицевого счета</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link"
+                      >Удаление учетной записи</a
+                    >
+                  </li>
+                  <li class="menu-list-item">
+                    <a href="#" class="menu-list-item-link">Профиль</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="content">
+          <h3 class="content-title">Подписка на электронную квитанцию</h3>
+          <div class="default">
+            <section>
+              <p>
+                Электронная квитанция является законным документом, полным
+                аналогом бумажной квитанции. Она приходит на электронную почту
+                потребителя. Также вы можете скачать её в разделе
+                <a href="#">“Скачать документы”</a>
+              </p>
+            </section>
+            <section>
+              <div class="blocks">
+                <div class="block">
+                  <div class="block-items">
+                    <div class="block-item">
+                      <div class="block-item-title">Лицевой счет</div>
+                      <div class="block-item-value">№ 12345678902</div>
+                    </div>
+                    <div class="block-item">
+                      <div class="block-item-title">Адрес</div>
+                      <div class="block-item-value">
+                        г Анадырь ул.Куркутского, д. 34
+                      </div>
+                    </div>
+                  </div>
+                  <div class="block-actions">
+                    <a
+                      href="#"
+                      class="button button-icon-subscribe"
+                      title="Ссылка"
+                      aria-label="#">
+                      <span class="button-text">Подписаться</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="block">
+                  <div class="block-items">
+                    <div class="block-item">
+                      <div class="block-item-title">Лицевой счет</div>
+                      <div class="block-item-value">№ 12345678902</div>
+                    </div>
+                    <div class="block-item">
+                      <div class="block-item-title">Адрес</div>
+                      <div class="block-item-value">
+                        г Анадырь ул.Куркутского, д. 34
+                      </div>
+                    </div>
+                  </div>
+                  <div class="block-actions">
+                    <a
+                      href="#"
+                      class="button button-icon-unsubscribe"
+                      title="Ссылка"
+                      aria-label="#">
+                      <span class="button-text">Отписаться</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ./main -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-first">
+          <div class="logo-link">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Логотип"
+              class="logo-image" />
+          </div>
+          <div class="footer-contact">
+            <div class="footer-item">
+              <a href="#" class="footer-item-value">(42722) 2-22-29</a>
+              <div class="footer-item-descr">Телефон приемной</div>
+            </div>
+            <div class="footer-item">
+              <a href="#" class="footer-item-value">(42722) 2-05-49</a>
+              <div class="footer-item-descr">Факс приемной</div>
+            </div>
+            <div class="footer-item">
+              <a href="#" class="footer-item-value">doc@chukotenergo.ru</a>
+              <div class="footer-item-descr">Электронная почта</div>
+            </div>
+          </div>
+          <div class="footer-item-social footer-item">
+            <div class="footer-social">
+              <a href="#" class="footer-social-item">
+                <span class="social social-vk"></span>
+              </a>
+              <a href="#" class="footer-social-item">
+                <span class="social social-tg"></span>
+              </a>
+              <a href="#" class="footer-social-item">
+                <span class="social social-ok"></span>
+              </a>
+            </div>
+            <div class="footer-item-descr">Наши социальные сети</div>
+          </div>
+        </div>
+        <hr />
+        <div class="footer-middle">
+          <div class="footer-mobile-app">
+            <a href="#" class="footer-mobile-app-link">
+              <div class="footer-mobile-app-link-icon">
+                <img src="./assets/icons/download.svg" />
+              </div>
+              <div class="footer-mobile-app-link-content">
+                <div class="footer-mobile-app-link-content-title">
+                  Мобильное приложение
+                </div>
+                <div class="footer-mobile-app-link-content-descr">
+                  Для iOS и Android
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="footer-information">
+            <span>Россия, Анадырь, 689000 ул.Куркутского, д. 34</span>
+            <a href="#" class="footer-privacy-policy">
+              Политика конфиденциальности
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="footer-last">
+          <span class="copyright">© АО «Чукотэнерго» 2006-2023</span>
+        </div>
+      </div>
+    </footer>
+    <!-- ./footer -->
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формы / Forms</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="./assets/js/popper.min.dev.js"></script>
+    <script src="./assets/js/tippy-bundle.umd.js"></script>
+    <script src="./assets/js/vue-multiselect.min.js"></script>
+    <script src="./assets/js/vue-datepicker.iife.js"></script>
+    <script src="./assets/js/app.js" defer></script>
+  </head>
+  <body id="app">
+    <main class="container" style="min-height: 100vh">
+      <h1>Формы / Forms</h1>
+      <section>
+        <h3>Элемент 0. Тултип</h3>
+        <div
+          class="__code-example"
+          style="display: flex; justify-content: space-between">
+          <div class="tooltip" data-tippy-content="My tooltip!"></div>
+          <div class="tooltip" data-tippy-content="My tooltip!"></div>
+        </div>
+      </section>
+      <section>
+        <h3>Элемент 1. Элемент формы / FormItem</h3>
+        <div class="__code-example">
+          <label class="form-item">
+            <span class="form-item-label">Название поля</span>
+            <input
+              type="text"
+              class="form-item-input"
+              placeholder="Поле ввода" />
+            <span class="form-item-message form-item-message-error"
+              >Текст ошибки</span
+            >
+          </label>
+        </div>
+      </section>
+      <section>
+        <h3>Элемент 2. Элемент формы с редактированием / FormItem</h3>
+        <div class="__code-example">
+          <label class="form-item">
+            <span class="form-item-label">Название поля</span>
+            <input
+              type="text"
+              class="form-item-input"
+              placeholder="Поле ввода"
+              id="INPUT_1"
+              disabled />
+            <span class="form-item-message form-item-message-error"></span>
+            <span class="form-item-input-edit" @click="handleDemo('INPUT_1')">
+            </span>
+          </label>
+        </div>
+      </section>
+      <section>
+        <h3>Элемент 3. Элемент формы с подсказкой / FormItem</h3>
+        <div class="__code-example">
+          <label class="form-item form-tooltip">
+            <span class="form-item-label">Название поля</span>
+            <input
+              type="text"
+              class="form-item-input"
+              placeholder="Поле ввода" />
+            <span class="form-item-message form-item-message-error"
+              >Текст ошибки</span
+            >
+            <span class="tooltip" data-tippy-content="My tooltip!"></span>
+          </label>
+        </div>
+      </section>
+      <section>
+        <h3>Элемент 4. Выпадающий список / Select</h3>
+        <div class="__code-example">
+          <vue-multiselect
+            v-model="valuePayment"
+            :options="optionsPayment"
+            label="name"
+            placeholder="Выберите"
+            :searchable="false"
+            :show-labels="false"></vue-multiselect>
+        </div>
+      </section>
+      <section>
+        <h3>Элемент 5. Датапикер / Picker</h3>
+        <div class="__code-example">
+          <datepicker
+            v-model="datepicked"
+            locale="ru"
+            cancel-text="Отменить"
+            select-text="Выбрать"
+            :enable-time-picker="false"
+            month-name-format="long"
+            format="dd.MM.Y"
+            placeholder="Выберите дату">
+            <template #input-icon>
+              <img class="input-slot-image" src="./assets/icons/calendar.svg" />
+            </template>
+          </datepicker>
+        </div>
+      </section>
+      <hr style="height: 500px" />
+    </main>
+  </body>
+</html>

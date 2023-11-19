@@ -1,0 +1,41 @@
+.dp__inner_nav,
+.dp__btn {
+  color: var(--navy-blue);
+}
+.dp__overlay_cell_active {
+  background-color: var(--blue);
+  color: var(--navy-blue);
+}
+.dp__input {
+  border-radius: 8px;
+  color: var(--navy-blue);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+
+  background-color: #f4f8fc;
+  border: 0;
+  padding: 8px 44px;
+  height: 44px;
+}
+.dp__input::placeholder {
+  color: var(--navy-blue);
+}
+.input-slot-image {
+  width: 24px;
+  height: 24px;
+  margin: 10px 10px;
+  display: flex;
+}
+.datepicker-item {
+  max-width: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .dp__input,
+  .multiselect__option {
+    font-size: 14px;
+  }
+}

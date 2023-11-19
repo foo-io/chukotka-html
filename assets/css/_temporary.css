@@ -1,0 +1,7 @@
+.__code-example {
+	display: flex;
+}
+.__header-example {
+	height: 121px;
+	background-color: var(--blue);
+}

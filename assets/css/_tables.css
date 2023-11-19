@@ -1,0 +1,239 @@
+.table {
+  overflow-x: auto;
+  text-wrap: nowrap;
+  /* scrollbar-gutter: stable; */
+}
+table {
+  border-radius: 8px;
+  border: 1px solid #e4f1ff;
+  background-color: #f4f8fc;
+  overflow: hidden;
+  border-spacing: 0;
+  width: 100%;
+}
+thead {
+  background-color: #e4f1ff;
+}
+tbody tr::after {
+  content: "";
+  border-bottom: 1px solid #e4f1ff;
+  width: calc(100% - 24px * 2);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+tfoot tr::after {
+  content: "";
+  border-top: 1px solid #e4f1ff;
+  width: calc(100% - 24px * 2);
+  height: 1px;
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+tbody tr:last-child:after {
+  content: none;
+}
+tr {
+  position: relative;
+}
+th {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 24px;
+  text-align: start;
+}
+td {
+  text-align: right;
+  padding: 24px;
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+td:first-child {
+  text-align: left;
+}
+tfoot tr {
+  padding-bottom: 20px;
+}
+tfoot td {
+  color: var(--navy-blue);
+}
+
+/* scrollbar styles */
+.table::-webkit-scrollbar {
+  display: flex;
+  height: 4px;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background: var(--navy-blue);
+  border-radius: 4px;
+}
+
+table.large th,
+table.large td {
+  font-size: 16px;
+}
+
+.table-div {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+.table-div-header {
+  background-color: #e4f1ff;
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  padding: 24px;
+  display: flex;
+  gap: 26px;
+}
+.table-div-content {
+  padding: 24px;
+  background-color: #f4f8fc;
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  gap: 26px;
+}
+.table-div-header * {
+  width: 20%;
+}
+.table-div-content * {
+  width: 20%;
+}
+.table-number {
+  text-align: right;
+}
+.table-div-v2 {
+  flex-direction: row;
+}
+.table-div-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f8fc;
+  flex: 1;
+  text-wrap: nowrap;
+}
+.table-div-value {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+}
+@media screen and (max-width: 1100px) {
+  table.large th,
+  table.large td {
+    font-size: 14px;
+  }
+  .table-div-header *,
+  .table-div-content * {
+  }
+}
+@media screen and (max-width: 767px) {
+  .table-number {
+    text-align: unset;
+  }
+  .table-div-header *,
+  .table-div-content * {
+    width: auto;
+  }
+  .table-div {
+    flex-direction: row;
+  }
+  .table-div-header,
+  .table-div-value {
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .table-div-header {
+    padding: 16px;
+    font-weight: 450;
+  }
+  .table-div-value {
+    padding: 16px;
+    flex: 1;
+  }
+  .table-div-v2 {
+    flex-direction: column;
+    border: 1px solid #e4f1ff;
+  }
+  .table-div-item {
+    text-wrap: balance;
+    flex-direction: row;
+    border-bottom: 1px solid #e4f1ff;
+  }
+  .table-div-item:last-child {
+    border-bottom: 0;
+  }
+  .table-div-item .table-div-header {
+    flex: 1;
+  }
+  .table-div-item .table-div-value {
+    flex: 1;
+  }
+  .table-div-value {
+    padding: 16px;
+  }
+  .table-div-v3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f8fc;
+  }
+  .table-v3-row {
+    display: flex;
+  }
+  .table-div-v3 .table-div-header {
+    align-items: center;
+  }
+  .table-v3-subheader {
+    padding: 16px;
+    font-weight: 450;
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .table-v3-value {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .table-v3-value .form-item-input {
+    background: #fff;
+    border: 1px solid #e4f1ff;
+  }
+  .tables-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

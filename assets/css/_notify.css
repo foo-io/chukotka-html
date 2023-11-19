@@ -1,0 +1,99 @@
+.notify {
+}
+.notify-item {
+  border-top: 1px solid #646464;
+}
+.notify-item:last-child {
+  border-bottom: 1px solid #646464;
+}
+.notify-item-button {
+  padding: 40px 64px 40px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.notify-item-header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.notify-item-header-title {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.notify-item-button::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11.9995 15.0538L6.3457 9.40002L7.39953 8.34619L11.9995 12.9462L16.5995 8.34619L17.6534 9.40002L11.9995 15.0538Z' fill='%23005D9F'/%3E%3C/svg%3E");
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 24px;
+  transition: transform 0.2s ease-out;
+}
+.notify-item-content {
+  padding: 0 20px 40px;
+}
+.notify-item-content-text * {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+.notify-item-content-text > p:last-child {
+  margin: 0;
+}
+.notify-item-header-indicator {
+  margin: 0 20px;
+  border-radius: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #f08400;
+}
+.notify-item-date {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+.selected .notify-item-button::before {
+  transform: rotate(180deg);
+}
+.notify-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 767px) {
+  .notify-item-header {
+    width: 100%;
+  }
+  .notify-item-button {
+    gap: 12px;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 20px 48px 20px 16px;
+  }
+  .notify-item-button::before {
+    top: 20px;
+    right: 16px;
+  }
+  .notify-item-content {
+    gap: 20px;
+    padding: 0 16px 20px;
+  }
+}

@@ -1,0 +1,94 @@
+.multiselect {
+  height: 48px;
+}
+.multiselect__tags {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border: 1px solid #ecf5ff;
+  border-radius: 8px;
+  background: #f4f8fc;
+  padding: 10px 20px;
+  color: #d9d9d9;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+.multiselect__input,
+.multiselect__single,
+.multiselect__placeholder {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+.multiselect__input,
+.multiselect__single {
+  color: #232323;
+  margin: 0;
+  background-color: transparent;
+  padding: 0;
+}
+.multiselect__single {
+  color: var(--navy-blue);
+}
+.multiselect__placeholder {
+  color: #d9d9d9;
+  margin: 0;
+  padding: 0;
+}
+.multiselect__element {
+}
+.multiselect__content {
+  background-color: #f4f8fc;
+}
+.multiselect__content-wrapper {
+  border-color: #ecf5ff;
+}
+.multiselect__option--selected.multiselect__option--highlight {
+  background-color: #ecf5ff;
+  color: var(--navy-blue);
+}
+.multiselect__option {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  padding: 10px 20px;
+}
+.multiselect__option--selected {
+  background-color: #ecf5ff;
+  color: var(--navy-blue);
+}
+.multiselect__option--highlight {
+  background-color: #ecf5ff;
+}
+.multiselect__select {
+  bottom: 0;
+  top: 0;
+  height: auto;
+  width: 48px;
+}
+.multiselect__select::before {
+  margin: 0;
+  border: 0;
+  top: calc(50% - 24px / 2);
+  right: calc(50% - 24px / 2);
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 15.0538L6.34619 9.40002L7.40002 8.34619L12 12.9462L16.6 8.34619L17.6538 9.40002L12 15.0538Z' fill='%23005D9F'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 767px) {
+  .multiselect__input,
+  .multiselect__single,
+  .multiselect__placeholder {
+    font-size: 14px;
+  }
+}

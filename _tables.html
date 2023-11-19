@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таблицы / Tables</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Таблицы / Tables</h1>
+      <section>
+        <h3>Вариант 0. div-таблица</h3>
+        <div class="__code-example">
+          <div class="table-div table-div-v2">
+            <div class="table-div-item">
+              <div class="table-div-header">Прибор учета</div>
+              <div class="table-div-value">ПУ №12345678</div>
+            </div>
+            <div class="table-div-item">
+              <div class="table-div-header">Период</div>
+              <div class="table-div-value">май 2023</div>
+            </div>
+            <div class="table-div-item">
+              <div class="table-div-header">Последние показания</div>
+              <div class="table-div-value">8590,00</div>
+            </div>
+            <div class="table-div-item">
+              <div class="table-div-header">Ед. изм.</div>
+              <div class="table-div-value">кВт.ч</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Вариант 0. div-таблица</h3>
+        <div class="__code-example">
+          <div class="table-div">
+            <div class="table-div-header">
+              <div>Прибор учета</div>
+              <div>Период</div>
+              <div class="table-number">Последние показания</div>
+              <div class="table-number">Ед. изм.</div>
+            </div>
+            <div class="table-div-content">
+              <div>ПУ №12345678</div>
+              <div>май 2023</div>
+              <div class="table-number">8590,00</div>
+              <div class="table-number">кВт.ч</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Вариант 1. Шрифт 16px</h3>
+        <div class="__code-example">
+          <div class="table">
+            <table class="large">
+              <thead>
+                <tr>
+                  <th>Прибор учета</th>
+                  <th>Период</th>
+                  <th>Последние показания</th>
+                  <th>Ед. изм</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ПУ №12345678</td>
+                  <td>май 2023</td>
+                  <td>8590,00</td>
+                  <td>кВт.ч</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Вариант 2. Шрифт дефолт</h3>
+        <div class="__code-example">
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Услуга</th>
+                  <th>Ед. изм.</th>
+                  <th>Тариф</th>
+                  <th>Объем</th>
+                  <th>Начало месяца</th>
+                  <th>Начислено</th>
+                  <th>Оплачено</th>
+                  <th>Перерасчет</th>
+                  <th>Итого к оплате</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Акт.Э/Э (Ночь)</td>
+                  <td>кВт.ч</td>
+                  <td>5.13</td>
+                  <td>49</td>
+                  <td>1 280.70</td>
+                  <td>251.31</td>
+                  <td>4 956.66</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>Акт.Э/Э (Ночь)</td>
+                  <td>кВт.ч</td>
+                  <td>7.94</td>
+                  <td>119</td>
+                  <td>0.00</td>
+                  <td>944.86</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>Пени</td>
+                  <td>Руб.</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>130.87</td>
+                  <td>0.00</td>
+                  <td>124.08</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Итого</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>1 411.63</td>
+                  <td>1196.23</td>
+                  <td>5 089.74</td>
+                  <td></td>
+                  <td>0.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

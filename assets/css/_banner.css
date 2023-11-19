@@ -1,0 +1,97 @@
+/* banner styles */
+.banner {
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(
+      267deg,
+      rgba(0, 93, 159, 0.8) -0.52%,
+      rgba(64, 189, 255, 0.8) 54.52%
+    ),
+    linear-gradient(87deg, #000 0%, #005d9f 38.49%, #40bdff 46.33%);
+  /* min-height: 246px; */
+  padding: 60px 40px;
+  overflow: hidden;
+}
+.banner-background-coin {
+  position: absolute;
+  right: 175px;
+  bottom: 45px;
+}
+.banner-background-receipt {
+  position: absolute;
+  right: 30px;
+  top: 39px;
+}
+.banner-title {
+  margin: 0;
+  color: #fff;
+}
+.banner-descr {
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.banner-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.banner-content-actions {
+  display: flex;
+}
+@media screen and (max-width: 1100px) {
+  .banner {
+    /* min-height: 240px; */
+  }
+  .banner-background-coin {
+    width: 106px;
+    height: 106px;
+    bottom: 47px;
+    right: 177px;
+  }
+  .banner-background-receipt {
+    width: 145px;
+    height: 145px;
+    top: 47px;
+    right: 44px;
+  }
+  .banner-descr {
+    font-size: 16px;
+  }
+  .banner-content {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner {
+    padding: 32px 16px;
+  }
+  .banner-content {
+    gap: 13px;
+  }
+  .banner-descr {
+    font-size: 12px;
+    line-height: normal;
+  }
+  .banner-background-coin {
+    width: 47px;
+    height: 47px;
+    bottom: 25px;
+    right: 69px;
+  }
+  .banner-background-receipt {
+    width: 68px;
+    height: 67px;
+    top: 38px;
+    right: 10px;
+  }
+}
