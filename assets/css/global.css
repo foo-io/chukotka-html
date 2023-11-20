@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-bottom: 110px;
 }
 p {
@@ -362,6 +362,7 @@ a.header-phone-link {
   border-end-end-radius: 0;
 }
 .header-personal-menu {
+  max-height: 5000px;
   display: none;
   border-end-end-radius: 8px;
   border-end-start-radius: 8px;
@@ -464,6 +465,7 @@ aside {
 .menu-list-item {
 }
 .menu-list-item-link {
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -510,6 +512,7 @@ aside {
   gap: 8px;
 }
 .menu-sublist {
+  max-height: 1000px;
   margin: 0;
   margin-top: 20px;
   list-style: none;
@@ -557,6 +560,7 @@ aside {
   justify-content: space-between;
 }
 .section-title {
+  display: inline-flex;
   margin: 0;
 }
 .section-content {

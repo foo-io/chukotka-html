@@ -106,24 +106,26 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 1">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Оплата услуг</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Подписка на электронную квитанцию</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Передача показаний ПУ</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Обратная связь</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 1">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Оплата услуг</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Подписка на электронную квитанцию</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Передача показаний ПУ</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Обратная связь</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
               <li
                 class="menu-list-item"
@@ -136,17 +138,19 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 2">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Квитанции</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Договоры</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Извещения</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 2">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Квитанции</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Договоры</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Извещения</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
               <li class="menu-list-item">
                 <a href="#" class="menu-list-item-link">
@@ -166,24 +170,26 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 3">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Смена пароля</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Удаление лицевого счета</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Удаление учетной записи</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Профиль</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 3">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Смена пароля</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Удаление лицевого счета</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Удаление учетной записи</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Профиль</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
             </ul>
           </nav>
@@ -210,12 +216,12 @@
         <aside>
           <nav class="aside-navigation">
             <ul class="menu-list">
-              <li class="menu-list-item selected">
+              <li class="menu-list-item">
                 <a href="#" class="menu-list-item-link"
                   >Добавить Лицевой счет</a
                 >
               </li>
-              <li class="menu-list-item">
+              <li class="menu-list-item selected">
                 <a href="#" class="menu-list-item-link">Начисления и оплаты</a>
               </li>
               <li
@@ -229,24 +235,26 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 1">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Оплата услуг</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Подписка на электронную квитанцию</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Передача показаний ПУ</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Обратная связь</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 1">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Оплата услуг</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Подписка на электронную квитанцию</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Передача показаний ПУ</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Обратная связь</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
               <li
                 class="menu-list-item"
@@ -259,17 +267,19 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 2">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Квитанции</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Договоры</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Извещения</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 2">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Квитанции</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Договоры</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Извещения</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
               <li class="menu-list-item">
                 <a href="#" class="menu-list-item-link">
@@ -289,24 +299,26 @@
                     <img src="./assets/icons/arrow.svg" alt="Стрелка" />
                   </button>
                 </a>
-                <ul class="menu-sublist" v-if="isVisibleNavigation === 3">
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Смена пароля</a>
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Удаление лицевого счета</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link"
-                      >Удаление учетной записи</a
-                    >
-                  </li>
-                  <li class="menu-list-item">
-                    <a href="#" class="menu-list-item-link">Профиль</a>
-                  </li>
-                </ul>
+                <transition name="fade"
+                  ><ul class="menu-sublist" v-if="isVisibleNavigation === 3">
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Смена пароля</a>
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Удаление лицевого счета</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link"
+                        >Удаление учетной записи</a
+                      >
+                    </li>
+                    <li class="menu-list-item">
+                      <a href="#" class="menu-list-item-link">Профиль</a>
+                    </li>
+                  </ul>
+                </transition>
               </li>
             </ul>
           </nav>

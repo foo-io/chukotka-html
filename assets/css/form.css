@@ -123,6 +123,13 @@
   border: 1px solid #e4f1ff;
   background: #fff;
   width: 150px;
+  height: 40px;
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .form-feedback-row {
   max-width: 400px;
@@ -207,7 +214,18 @@ span.form-item-input {
   width: 19px;
   margin: 3px;
 }
+.form-feedback-row .form-item-input,
+.form-feedback-textarea .form-item-input {
+  font-size: 16px;
+}
+.form-feedback-textarea .form-item-input {
+  padding: 24px;
+}
 @media screen and (max-width: 1100px) {
+  .form-feedback-row .form-item-input,
+  .form-feedback-textarea .form-item-input {
+    font-size: 14px;
+  }
   .form {
     gap: 36px;
   }
@@ -252,6 +270,9 @@ span.form-item-input {
   }
 }
 @media screen and (max-width: 767px) {
+  .form-feedback-textarea .form-item-input {
+    padding: 20px;
+  }
   .datepickers {
     gap: 8px;
   }

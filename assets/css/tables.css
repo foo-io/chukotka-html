@@ -1,7 +1,7 @@
 .table {
-  overflow-x: auto;
+  /* overflow-x: auto;
   text-wrap: nowrap;
-  /* scrollbar-gutter: stable; */
+  max-width: calc(100vw - 16px * 2); */
 }
 table {
   border-radius: 8px;
@@ -47,7 +47,7 @@ th {
   font-family: var(--font-family);
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 450;
   line-height: normal;
   padding: 24px;
   text-align: start;
@@ -61,6 +61,9 @@ td {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+td:not(:first-child) {
+  text-wrap: nowrap;
 }
 td:first-child {
   text-align: left;
@@ -144,6 +147,11 @@ table.large td {
   padding: 24px;
 }
 @media screen and (max-width: 1100px) {
+  .table {
+    overflow-x: auto;
+    text-wrap: nowrap;
+    max-width: calc(100vw - 16px * 2);
+  }
   table.large th,
   table.large td {
     font-size: 14px;

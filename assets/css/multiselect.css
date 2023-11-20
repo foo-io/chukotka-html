@@ -25,6 +25,9 @@
   font-weight: 400;
   line-height: 140%; /* 22.4px */
 }
+.multiselect__placeholder {
+  display: block !important;
+}
 .multiselect__input,
 .multiselect__single {
   color: #232323;
@@ -83,6 +86,15 @@
   width: 24px;
   height: 24px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 15.0538L6.34619 9.40002L7.40002 8.34619L12 12.9462L16.6 8.34619L17.6538 9.40002L12 15.0538Z' fill='%23005D9F'/%3E%3C/svg%3E");
+}
+.multiselect-enter-active,
+.multiselect-leave-active {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+.multiselect-enter-from,
+.multiselect-leave-to {
+  max-height: 0px !important;
 }
 
 @media screen and (max-width: 767px) {
