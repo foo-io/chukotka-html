@@ -14,9 +14,6 @@ main {
   overflow: hidden;
   padding-bottom: 110px;
 }
-a:link {
-  color: var(--navy-blue);
-}
 p {
   color: #232323;
   font-family: var(--font-family);
