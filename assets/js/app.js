@@ -65,10 +65,14 @@ const app = createApp({
     const optionsPayment = ref([
       {
         id: 0,
-        name: "Начисления",
+        name: "Посмотреть все",
       },
       {
         id: 1,
+        name: "Начисления",
+      },
+      {
+        id: 2,
         name: "Оплаты",
       },
     ]);
