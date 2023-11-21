@@ -330,7 +330,7 @@
               <div class="section-header">
                 <div class="section-header-rigth">
                   <div class="datepickers">
-                    <div class="datepicker-item">
+                    <div class="datepicker-item-range">
                       <datepicker
                         v-model="datepicked"
                         locale="ru"
@@ -339,24 +339,8 @@
                         :enable-time-picker="false"
                         month-name-format="long"
                         format="dd.MM.Y"
-                        placeholder="С месяца">
-                        <template #input-icon>
-                          <img
-                            class="input-slot-image"
-                            src="./assets/icons/calendar.svg" />
-                        </template>
-                      </datepicker>
-                    </div>
-                    <div class="datepicker-item">
-                      <datepicker
-                        v-model="datepicked"
-                        locale="ru"
-                        cancel-text="Отменить"
-                        select-text="Выбрать"
-                        :enable-time-picker="false"
-                        month-name-format="long"
-                        format="dd.MM.Y"
-                        placeholder="По месяц">
+                        placeholder="Выберите период"
+                        range>
                         <template #input-icon>
                           <img
                             class="input-slot-image"
@@ -376,7 +360,7 @@
                 </div>
               </div>
               <div class="section-content">
-                <div class="blocks">
+                <div class="blocks blocks-receipts">
                   <div class="block">
                     <div class="block-items">
                       <div class="block-item">
@@ -386,8 +370,10 @@
                         <div class="block-item-value">№ 12345678902</div>
                       </div>
                       <div class="block-item">
-                        <div class="block-item-title">Дата</div>
-                        <div class="block-item-value">4 апреля 2023</div>
+                        <div class="block-item-title hide-on-mobile">Дата</div>
+                        <div class="block-item-value block-item-date">
+                          4 апреля 2023
+                        </div>
                       </div>
                     </div>
                     <div class="block-actions">
@@ -409,8 +395,10 @@
                         <div class="block-item-value">№ 12345678902</div>
                       </div>
                       <div class="block-item">
-                        <div class="block-item-title">Дата</div>
-                        <div class="block-item-value">4 апреля 2023</div>
+                        <div class="block-item-title hide-on-mobile">Дата</div>
+                        <div class="block-item-value block-item-date">
+                          4 апреля 2023
+                        </div>
                       </div>
                     </div>
                     <div class="block-actions">

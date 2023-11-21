@@ -193,4 +193,24 @@
   .block-item-subvalue {
     font-size: 14px;
   }
+
+  .blocks-receipts .block {
+    flex-direction: row;
+    align-items: center;
+  }
+  .blocks-receipts .block-item {
+    gap: 6px;
+    border: 0;
+    margin-bottom: 8px;
+    padding: 0;
+  }
+  .blocks-receipts .block-item:last-child {
+    margin: 0;
+  }
+  .blocks-receipts .block-item-value {
+    font-size: 16px;
+  }
+  .block-item-date {
+    font-size: 14px;
+  }
 }

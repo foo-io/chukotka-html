@@ -181,8 +181,8 @@ span.form-item-input {
   height: 10px;
   content: "";
   position: absolute;
-  top: calc(50% - 5px);
-  left: calc(50% - 5px);
+  inset: 0;
+  margin: auto;
   background-color: #f08400;
   border-radius: 5px;
 }

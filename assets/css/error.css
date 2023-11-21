@@ -1,0 +1,30 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.error-code {
+  margin: 0;
+  margin-bottom: 20px;
+
+  color: #f00;
+
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.error-text {
+  color: #232323;
+  font-family: var(--font-family);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.error-button {
+  margin-top: 40px;
+}

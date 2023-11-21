@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Начисления и оплаты</title>
+    <title>Страница ошибки</title>
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -324,133 +324,17 @@
           </nav>
         </aside>
         <div class="content">
-          <h3 class="content-title">Начисления и оплаты</h3>
-          <section>
-            <div class="section-header">
-              <div style="width: 200px">
-                <vue-multiselect
-                  v-model="valuePayment"
-                  :options="optionsPayment"
-                  label="name"
-                  placeholder="Выберите"
-                  :searchable="false"
-                  :show-labels="false"></vue-multiselect>
-              </div>
-              <div class="section-header-rigth">
-                <div class="datepicker-item datepicker-item-range">
-                  <datepicker
-                    v-model="datepicked"
-                    locale="ru"
-                    cancel-text="Отменить"
-                    select-text="Выбрать"
-                    :enable-time-picker="false"
-                    month-name-format="long"
-                    format="dd.MM.Y"
-                    placeholder="Выберите период"
-                    range>
-                    <template #input-icon>
-                      <img
-                        class="input-slot-image"
-                        src="./assets/icons/calendar.svg" />
-                    </template>
-                  </datepicker>
-                </div>
-                <!-- <div class="datepicker-item">
-                  <datepicker
-                    v-model="datepicked"
-                    locale="ru"
-                    cancel-text="Отменить"
-                    select-text="Выбрать"
-                    :enable-time-picker="false"
-                    month-name-format="long"
-                    format="dd.MM.Y"
-                    placeholder="По месяц">
-                    <template #input-icon>
-                      <img
-                        class="input-slot-image"
-                        src="./assets/icons/calendar.svg" />
-                    </template>
-                  </datepicker>
-                </div> -->
-              </div>
+          <!-- content -->
+          <div class="error">
+            <h1 class="error-code">404</h1>
+            <div class="error-text">Страница не найдена</div>
+            <div class="error-button">
+              <a href="#" class="button button-icon-plus"
+                >Вернуться на главную</a
+              >
             </div>
-            <div class="section-content">
-              <div class="table">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Услуга</th>
-                      <th>Тариф</th>
-                      <th>Ед. изм.</th>
-                      <th>Объем</th>
-                      <th>Начало месяца</th>
-                      <th>Начислено</th>
-                      <th>Оплачено</th>
-                      <th>Перерасчет</th>
-                      <th>Итого к оплате</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Акт.Э/Э (Ночь)</td>
-                      <td>5.13</td>
-                      <td>кВт.ч</td>
-                      <td>49</td>
-                      <td>1 280.70</td>
-                      <td>251.31</td>
-                      <td>4 956.66</td>
-                      <td>0.00</td>
-                      <td>0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Акт.Э/Э (Ночь)</td>
-                      <td>7.94</td>
-                      <td>кВт.ч</td>
-                      <td>119</td>
-                      <td>0.00</td>
-                      <td>944.86</td>
-                      <td>0.00</td>
-                      <td>0.00</td>
-                      <td>0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Пени</td>
-                      <td>0.00</td>
-                      <td>Руб.</td>
-                      <td>0.00</td>
-                      <td>130.87</td>
-                      <td>0.00</td>
-                      <td>124.08</td>
-                      <td>0.00</td>
-                      <td>0.00</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td>Итого</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>1 411.63</td>
-                      <td>1196.23</td>
-                      <td>5 089.74</td>
-                      <td></td>
-                      <td>0.00</td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-            <div class="section-footer-actions">
-              <a
-                href="#"
-                class="button button-icon-table"
-                title="Ссылка"
-                aria-label="#">
-                <span class="button-text">Скачать Excel</span>
-              </a>
-            </div>
-          </section>
+          </div>
+          <!-- ./content -->
         </div>
       </div>
     </main>

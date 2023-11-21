@@ -52,6 +52,9 @@ th {
   padding: 24px;
   text-align: start;
 }
+th:not(:first-child) {
+  text-align: end;
+}
 td {
   text-align: right;
   padding: 24px;

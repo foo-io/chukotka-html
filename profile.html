@@ -348,22 +348,30 @@
               <input
                 type="email"
                 class="form-item-input"
+                placeholder="Введите E-mail"
                 value="mail@example.net"
-                placeholder="Введите E-mail" />
-              <span class="form-item-message form-item-message-error"
-                >Текст ошибки</span
-              >
+                id="INPUT_EMAIL"
+                disabled />
+              <span class="form-item-message form-item-message-error"></span>
+              <span
+                class="form-item-input-edit"
+                @click="handleDemo('INPUT_EMAIL')">
+              </span>
             </label>
             <label class="form-item">
               <span class="form-item-label">Телефон</span>
               <input
-                type="tel"
+                type="email"
                 class="form-item-input"
+                placeholder="Введите телефон"
                 value="+7 991 123 45 67"
-                placeholder="Введите телефон" />
-              <span class="form-item-message form-item-message-error"
-                >Текст ошибки</span
-              >
+                id="INPUT_PHONE"
+                disabled />
+              <span class="form-item-message form-item-message-error"></span>
+              <span
+                class="form-item-input-edit"
+                @click="handleDemo('INPUT_PHONE')">
+              </span>
             </label>
             <div class="form-actions">
               <a href="#" class="button" title="Ссылка" aria-label="#">
