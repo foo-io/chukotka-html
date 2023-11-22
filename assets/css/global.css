@@ -441,6 +441,7 @@ a.header-phone-link {
 }
 .page {
   display: flex;
+  justify-content: center;
 }
 .header {
   margin-bottom: 40px;

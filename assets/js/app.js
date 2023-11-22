@@ -2,12 +2,16 @@ const { createApp, ref } = Vue;
 const VueMultiselect = window["vue-multiselect"].default;
 
 document.addEventListener("DOMContentLoaded", () => {
-  MicroModal.init({});
+  MicroModal.init({
+    disableFocus: true,
+    disableScroll: true,
+  });
 
   tippy("[data-tippy-content]", {
     theme: "custom",
     placement: "right",
     offset: [0, 20],
+    allowHTML: true,
   });
 
   var inputs = document.querySelectorAll(".form-item-file-input");
@@ -34,16 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
 const app = createApp({
   components: { VueMultiselect, Datepicker: VueDatePicker },
   setup() {
-    console.log(VueDatePicker);
-
     const isVisiblePersonalButton = ref(false);
     const message = ref("Hello vue!");
     const isVisibleMobileMenu = ref(false);
     const isVisibleNavigation = ref(null);
     const isVisibleNotify = ref(null);
     const isMainPageAccordionSelected = ref(1);
-
+    const isShowPassword = ref(false);
     const datepicked = ref(null);
+
+    // forms models
+    const formAuth = ref({
+      login: null,
+      password: null,
+    });
+    const formRegisterPersonal = ref({
+      password: null,
+    });
 
     // feedback selectors
     const optionsThemes = ref([
@@ -101,6 +112,10 @@ const app = createApp({
       }
     };
 
+    const showPassword = () => {
+      isShowPassword.value = !isShowPassword.value;
+    };
+
     const openMenu = (index) => {
       if (index === isVisibleNavigation.value) {
         isVisibleNavigation.value = null;
@@ -140,13 +155,17 @@ const app = createApp({
       isVisibleNavigation,
       isVisibleNotify,
       isMainPageAccordionSelected,
+      isShowPassword,
       datepicked,
+      formAuth,
+      formRegisterPersonal,
       optionsPayment,
       optionsLCs,
       optionsThemes,
       valueLC,
       valueTheme,
       showMenu,
+      showPassword,
       openMenu,
       openSpoiler,
       openMainPageAccordion,
