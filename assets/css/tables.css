@@ -55,6 +55,9 @@ th {
 th:not(:first-child) {
   text-align: end;
 }
+th.text-center {
+  text-align: center;
+}
 td {
   text-align: right;
   padding: 24px;

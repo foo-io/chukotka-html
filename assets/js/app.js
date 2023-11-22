@@ -31,10 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
 const app = createApp({
   components: { VueMultiselect, Datepicker: VueDatePicker },
   setup() {
+    console.log(VueDatePicker);
+
     const isVisiblePersonalButton = ref(false);
     const message = ref("Hello vue!");
     const isVisibleMobileMenu = ref(false);
