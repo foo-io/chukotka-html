@@ -33,7 +33,62 @@
   align-items: center;
   gap: 12px;
 }
+.switcher {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.switcher-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: balance;
+  border-radius: 8px;
+  background-color: #e4f1ff;
+  height: 116px;
+  color: #232323;
+  border: 0;
+  cursor: pointer;
 
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.2s ease-out;
+}
+.switcher-button:hover {
+  color: var(--navy-blue);
+}
+.switcher-button.selected {
+  background-color: var(--navy-blue);
+  color: #fff;
+}
+
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: opacity 0.2s ease-out;
+}
+
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+.register-status {
+  height: 50dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register-status-description {
+  margin-bottom: 50px;
+}
 @media screen and (max-width: 1100px) {
   .auth-title h1 {
     font-size: 22px;
@@ -47,6 +102,12 @@
   .auth-description {
     font-size: 16px;
   }
+  .switcher-button {
+    font-size: 18px;
+  }
+  .register-status-description {
+    margin-bottom: 32px;
+  }
 }
 @media screen and (max-width: 767px) {
   .auth-title h1 {
@@ -57,5 +118,12 @@
   }
   .auth-description {
     font-size: 14px;
+  }
+  .switcher {
+    gap: 8px;
+  }
+  .switcher-button {
+    height: 100px;
+    font-size: 16px;
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Восстановление пароля</title>
+    <title>Регистрация - Статус - Успешно</title>
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -56,45 +56,17 @@
         <div class="content">
           <div class="page-no-login">
             <!-- content no logged page -->
-            <div class="auth-title">
-              <h1>Восстановление пароля</h1>
-            </div>
-            <div class="auth-description">
-              Введите регистрационные данные, показатели приборов учета, оплату
-              или задолженность за один из последних 3 месяцев. Новый пароль
-              будет отправлен вам на почту
-            </div>
-            <form action="" class="form form-auth">
-              <label class="form-item">
-                <span class="form-item-label">Логин</span>
-                <input
-                  type="text"
-                  class="form-item-input"
-                  placeholder="Введите свой логин" />
-              </label>
-              <label class="form-item">
-                <span class="form-item-label">Email</span>
-                <input
-                  type="email"
-                  class="form-item-input"
-                  placeholder="Введите адрес электронной почты" />
-              </label>
-              <label class="form-item">
-                <span class="form-item-label-long"
-                  >Введите показатели счетчика или оплаты или задолженности за
-                  последние 3 месяца</span
-                >
-                <input
-                  type="text"
-                  class="form-item-input"
-                  placeholder="Введите последние данные" />
-              </label>
-              <div class="form-actions">
-                <button class="button button-bg">
-                  <span class="button-text">Восстановить пароль</span>
-                </button>
+
+            <div class="register-status">
+              <img src="./assets/icons/register-false.svg" alt="true" />
+              <h2>Что-то пошло не так</h2>
+              <div class="register-status-description">
+                Попробуйте снова через пару минут
               </div>
-            </form>
+              <a href="#" class="button button-bg">
+                <span class="button-text">Войти в Личный кабинет</span>
+              </a>
+            </div>
 
             <!-- ./content no logged page -->
           </div>

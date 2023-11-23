@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       else fileName = e.target.value.split("\\").pop();
 
       if (fileName) {
-        console.log(fileName);
         label.querySelector("span.form-item-input").innerText = fileName;
       } else label.innerHTML = labelVal;
     });
@@ -46,6 +45,7 @@ const app = createApp({
     const isMainPageAccordionSelected = ref(1);
     const isShowPassword = ref(false);
     const datepicked = ref(null);
+    const selectedSwitcher = ref(1);
 
     // forms models
     const formAuth = ref({
@@ -156,6 +156,7 @@ const app = createApp({
       isVisibleNotify,
       isMainPageAccordionSelected,
       isShowPassword,
+      selectedSwitcher,
       datepicked,
       formAuth,
       formRegisterPersonal,
